@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partituras de Trompeta</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Biblioteca de Partituras</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="saxofon.html">Partituras de Saxofón</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trompeta.html">Partituras de Trompeta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="violin.html">Partituras de Violín</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron text-center">
+            <h1>Partituras de Trompeta</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="library-section">
+            <h2>Biblioteca de Partituras de Trompeta</h2>
+            <ul id="library-list-trompeta" class="list-group">
+                <!-- Las partituras de trompeta aparecerán aquí -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('partituras_trompeta.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.sort((a, b) => a.name.localeCompare(b.name)); // Ordenar alfabéticamente
+                    const libraryList = document.getElementById('library-list-trompeta');
+                    data.forEach(partitura => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'list-group-item';
+
+                        const link = document.createElement('a');
+                        link.href = partitura.url;
+                        link.textContent = `${partitura.name} - ${partitura.choir}`;
+                        link.target = "_blank";
+
+                        listItem.appendChild(link);
+                        libraryList.appendChild(listItem);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

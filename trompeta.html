@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partituras de Trompeta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="saxofon.html">Partituras de Saxofón</a></li>
+                <li><a href="trompeta.html">Partituras de Trompeta</a></li>
+                <li><a href="violin.html">Partituras de Violín</a></li>
+            </ul>
+        </nav>
+        <h1>Partituras de Trompeta</h1>
+    </header>
+    
+    <main>
+        <section id="upload-section">
+            <h2>Subir Partitura</h2>
+            <form id="upload-form-trumpet" enctype="multipart/form-data">
+                <label for="file">Selecciona una partitura:</label>
+                <input type="file" id="file" name="file" accept=".pdf, .jpg, .png">
+                
+                <label for="name">Nombre de la partitura:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="choir">Tipo de coro:</label>
+                <select id="choir" name="choir" required>
+                    <option value="coro_niños">Coro de Niños</option>
+                    <option value="coro_adultos">Coro de Adultos</option>
+                    <option value="coro_mixto">Coro Mixto</option>
+                </select>
+                
+                <button type="submit">Subir</button>
+            </form>
+        </section>
+        
+        <section id="library-section">
+            <h2>Biblioteca de Partituras de Trompeta</h2>
+            <ul id="library-list-trumpet">
+                <!-- Las partituras subidas aparecerán aquí -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

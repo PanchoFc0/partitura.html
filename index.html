@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Partituras</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Biblioteca de Partituras</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="saxofon.html">Partituras de Saxofón</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trompeta.html">Partituras de Trompeta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="violin.html">Partituras de Violín</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron text-center">
+            <h1>Biblioteca de Partituras</h1>
+            <p>Sube y visualiza tus partituras fácilmente</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="upload-section">
+            <h2>Subir Partitura</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Selecciona una partitura:</label>
+                    <input type="file" id="file" name="file" class="form-control" accept=".pdf, .jpg, .png" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nombre de la partitura:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="instrument">Instrumento:</label>
+                    <select id="instrument" name="instrument" class="form-control" required>
+                        <option value="saxofon">Saxofón</option>
+                        <option value="trompeta">Trompeta</option>
+                        <option value="violin">Violín</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="choir">Tipo de coro:</label>
+                    <select id="choir" name="choir" class="form-control" required>
+                        <option value="coro_niños">Coro de Niños</option>
+                        <option value="coro_adultos">Coro de Adultos</option>
+                        <option value="corito">Coro Mixto</option>
+                        <option value="himnario">Himnario</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Subir</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
